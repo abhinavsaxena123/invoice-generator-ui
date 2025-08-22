@@ -9,10 +9,10 @@ const uploadInvoiceThumbnail = async (imageData) => {
     // (2) Append the image data to the FormData object.
     formData.append('file', imageData);
 
-    // (3) Append Cloudinary upload preset.
+    // (3) Append Cloudinary upload preset(it's like settings)
     formData.append('upload_preset', 'invoices-thumbnail');
 
-    // (4) Append your Cloudinary cloud name.
+    // (4) Append your Cloudinary cloud name(identifier)
     formData.append('cloud_name', 'dlzcq22u6');
 
     // (5) Send a POST request to Cloudinary's upload API endpoint using axios.
@@ -22,7 +22,6 @@ const uploadInvoiceThumbnail = async (imageData) => {
     // Cloudinary's successful upload response contains various details, 
     // and 'secure_url' is the HTTPS URL of the uploaded image.
     return response.data.secure_url;
-
 }
 
 export default uploadInvoiceThumbnail;

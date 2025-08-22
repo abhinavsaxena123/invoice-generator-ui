@@ -1,34 +1,20 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Logo from "./Logo";
 import { Button } from "bootstrap";
 import { SignedIn, SignedOut, useClerk, UserButton } from "@clerk/clerk-react";
-//import { useContext } from "react";
-//import { AppContext, initialInvoiceData } from "../context/AppContext";
 
 const MenuBar = () => {
-
     const {openSignIn} = useClerk();
-    //const {setInvoiceData, setSelectedTemplate, setInvoiceTitle} = useContext(AppContext);
-    //const navigate = useNavigate();
 
     const openLogin = () => {
         openSignIn({});
     }
-
-    // const handleGenerateClick = () => {
-    //     setInvoiceData(initialInvoiceData);
-    //     setSelectedTemplate("template1");
-    //     setInvoiceTitle("New Invoice");
-    //     navigate("/generate");
-    // }
-
-
     
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
             <div className="container py-2">
 
-                <Link className="navbar-brand d-flex align-align-items-center" to="/">
+                <Link to="/" className="navbar-brand d-flex align-align-items-center">
                     <Logo />
                     <span className="fw-bolder fs-4 mx-3" style={{ letterSpacing: '-0.5px', color: '#0D6EFDB2' }} >
                         QuickInvoice

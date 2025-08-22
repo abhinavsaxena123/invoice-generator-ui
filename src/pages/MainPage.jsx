@@ -24,14 +24,13 @@ const MainPage = () => {
             (item) => !item.qty || !item.amount 
         );
         if(hasInvalidItem){
-            toast.error("Please Enter quantity and amount for all items!!")
+            toast.error("Please enter quantity and amount for all items!!")
         }
         
         setSelectedTemplate(templateId);
         //console.log(templateId);
         navigate('/preview')
     }
-
 
     const handleTitleChange = (e) => {
         const newTitle = e.target.value;
@@ -104,7 +103,6 @@ const MainPage = () => {
             </div>
         </div>
     );
-
 }
 
 export default MainPage;

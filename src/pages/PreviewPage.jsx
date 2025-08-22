@@ -35,6 +35,13 @@ const PreviewPage = () => {
     const {getToken} = useAuth();
     const {user} = useUser();
 
+    useEffect(() => {
+        if(!invoiceData || !invoiceData.items?.length) {
+            toast.error("Invoice data is empty!");
+            navigate("/dashboard");
+        }
+    },[invoiceData, navigate]);
+
     // Asynchronous function to handle the "Save and Exit" button click.
     const handleSaveAndExit = async () => {
         try {
@@ -99,7 +106,6 @@ const PreviewPage = () => {
             }
         } catch (error) {
             console.error("Deletion failed:", error);
-
             if(error.response && error.response.status === 404) {
                 toast.error("Invoice not found.");
             }
@@ -167,12 +173,12 @@ const PreviewPage = () => {
         }
     }
 
-    useEffect(() => {
-        if(!invoiceData || !invoiceData.items?.length) {
-            toast.error("Invoice data is empty!");
-            navigate("/dashboard");
-        }
-    },[invoiceData, navigate]);
+    // useEffect(() => {
+    //     if(!invoiceData || !invoiceData.items?.length) {
+    //         toast.error("Invoice data is empty!");
+    //         navigate("/dashboard");
+    //     }
+    // },[invoiceData, navigate]);
 
     return (
         
@@ -180,7 +186,6 @@ const PreviewPage = () => {
 
             {/* Action buttons */}
             <div className="d-flex flex-column align-items-center mb-4 gap-3">
-
                 {/* List of template buttons */}
                 <div className="d-flex gap-2 flex-wrap justify-content-center">
                     {
@@ -233,7 +238,6 @@ const PreviewPage = () => {
                     </button>
                     
                 </div>
-
             </div>
 
             {/* Display the invoice Preview */}
@@ -275,16 +279,12 @@ const PreviewPage = () => {
                             </div>
                         </div>
                     </div>
-               
-
                 </div>
             )}
 
         </div>
 
-
     );
-
 }
 
 export default PreviewPage;

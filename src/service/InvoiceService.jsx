@@ -16,6 +16,3 @@ export const getAllInvoices = (baseURL, token) => {
 export const deleteInvoice = (baseURL, id, token) => {
     return axios.delete(`${baseURL}/invoices/${id}`, {headers: {Authorization: `Bearer ${token}`}});
 }
-
-
-

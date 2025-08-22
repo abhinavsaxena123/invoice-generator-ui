@@ -42,7 +42,6 @@ const Dashboard = () => {
 
 
     const handleViewClick = (invoice) => {
-
         setInvoiceData(invoice);
         setSelectedTemplate(invoice.template || "template1");
         setInvoiceTitle(invoice.title || "New Invoice");
@@ -58,9 +57,7 @@ const Dashboard = () => {
 
     return (
         <div className="container py-4">
-
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
-                
                 {/* Create new Invoice card */}
                 <div className="col">
                     <div onClick={handleCreateNew} className="card h-170 d-flex justify-content-center align-items-center border border-2 border-light shadow-sm cursor-pointer" style={{minHeight: '250px'}}>
@@ -86,23 +83,19 @@ const Dashboard = () => {
                                         style={{height: "190px", objectFit: "cover" }} 
                                     />
                                 )}
-
                                 <div className="card-body">
                                     <h6 className="card-title mb-1">{invoice.title}</h6>
                                     <small className="text-muted">
                                         Last Updated: {formatDate(invoice.lastUpdatedAt)}
                                     </small>
                                 </div>
-
                             </div>
                         </div>
                     ))
                 }
-                
             </div>
         </div>
     );
-
 }
 
 export default Dashboard;

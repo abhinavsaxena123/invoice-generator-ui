@@ -10,7 +10,7 @@ const UserSyncHandler = () => {
 
     // Clerk hooks to get auth and user data
     const {isLoaded, isSignedIn, getToken } = useAuth();
-    const {user} = useUser();
+    const {user} = useUser();  //Clerk hook that provides the detailed profile object of the currently logged-in user.
 
     const {baseURL} = useContext(AppContext);
 
@@ -55,7 +55,6 @@ const UserSyncHandler = () => {
                 } else {
                     toast.error("An unexpected error occurred during user sync.");
                 }
-                //toast.error(error.message);
             }
         }
         saveUser();   // Call the async function

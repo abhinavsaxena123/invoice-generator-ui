@@ -12,7 +12,7 @@ const InvoiceForm = () => {
     const handleChange = (section, field, value) => {
         setInvoiceData((prev) => ({
             ...prev,  // Copy all previous invoiceData
-            [section]: {   // Update the specific section (e.g., 'company', 'billing')
+            [section]: {   // Update the specific section 
                 ...prev[section],   // Copy all previous fields within that section
                 [field]: value    // Update the specific field with the new value
             },
@@ -103,7 +103,6 @@ const InvoiceForm = () => {
             };
 
             reader.readAsDataURL(file);  // Read the file as a Data URL (base64)
-
         }
     };
 
@@ -119,11 +118,6 @@ const InvoiceForm = () => {
             }));
         }
     }, []); // Empty dependency array ensures this runs only once on mount
-
-
-    // const handleSubmit = () => {
-    //     console.log(invoiceData);
-    // }
 
     return (
 
@@ -152,7 +146,6 @@ const InvoiceForm = () => {
                         onChange={handleLogoUpload}
                     />
                 </div>
-
             </div>
 
             {/* Company Info */}
@@ -160,6 +153,7 @@ const InvoiceForm = () => {
                 <h5>Your Company</h5>
 
                 <div className="row g-3">
+
                     <div className="col-md-6">
                         <input 
                             type="text" 
@@ -189,6 +183,7 @@ const InvoiceForm = () => {
                             onChange={(e) => handleChange("company", "address", e.target.value)}
                         />
                     </div>
+                    
                 </div>
 
             </div>

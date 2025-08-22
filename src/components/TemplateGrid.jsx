@@ -1,10 +1,8 @@
 import { templates } from "../assets/assets";
 
 const TemplateGrid = ({onTemplateClick}) => {
-
     return (
         <div className="row g-3">
-            
             {
                 templates.map( ({id, label, image})  => (
                     <div key={id} className="col-12 col-sm-6 col-lg-4">
@@ -18,7 +16,6 @@ const TemplateGrid = ({onTemplateClick}) => {
                     </div>
                 ))
             }
-
         </div>
     );
 }

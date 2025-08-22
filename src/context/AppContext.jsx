@@ -20,8 +20,7 @@ export const initialInvoiceData = {
     logo: ""  // Stores the base64 string of the uploaded logo
 };
 
-
-export const AppContextprovider = ({ children} ) => {  // (2) Define Provider Component
+export const AppContextprovider = ({ children } ) => {  // (2) Define Provider Component
 
     // State for the invoice title
     const [invoiceTitle, setInvoiceTitle] = useState("New Invoice");  
